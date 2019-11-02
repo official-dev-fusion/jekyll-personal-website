@@ -1,0 +1,24 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="{{ "/assets/img/icon.png" | relative_url }}">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- HTML5 Boilerplate -->
+  <link rel="stylesheet" href="{{ "/assets/css/normalize.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/h5bp.css" | relative_url }}">
+
+  <!-- Bootstrap 4 -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <!-- Author custom CSS -->
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+</head>
