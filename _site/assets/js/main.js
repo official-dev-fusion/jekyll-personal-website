@@ -1,1 +1,1 @@
-$('code').hide();
+//$('code').hide();

@@ -4,7 +4,7 @@ title:  "Créer rapidement un projet de base complet avec un espace utilisateur 
 date:   2019-11-01 19:28:00
 ---
 
-Depuis Symfony 4.0, il n'est plus nécessaire d'installer un bundle externe comme friendsofsymfony/user-bundle pour créer un espace utilisateur. En effet, le composant Security de Symfony est de plus en plus flexible, mais également plus simple. Pour exploiter toute sa puissance on peut créer des Guard authenticators et des Voters pour faire des règles complexes d'autorisations. Malgré cela, il peut parfois être déroutant de créer rapidement un espace utilisateur grâce au composant Security vu toutes les possibilités qu'il nous offre.
+Depuis Symfony 4.0, il n'est plus nécessaire d'installer un bundle externe comme friendsofsymfony/user-bundle pour créer un espace utilisateur. En effet, le composant Security de Symfony est de plus en plus flexible, mais également plus simple. Pour exploiter toute sa puissance, on peut créer des Guard authenticators et des Voters pour faire des règles complexes d'autorisations. Malgré cela, il peut parfois être déroutant de créer rapidement un espace utilisateur grâce au composant Security vu toutes les possibilités qu'il nous offre.
 
 L'équipe de Symfony a pensé à nous en ajoutant des commandes dans le maker-bundle, à partir de la version 1.8, afin de nous faciliter la tâche.
 
@@ -24,7 +24,7 @@ Created project in dev_fusion_skeleton_user
 ```
 ----
 
-### Modifions le fichier .env pour configurer la base de données et créons là
+### Modifions le fichier .env pour configurer la base de données et créons-la
 
 ``` text
 ###> doctrine/doctrine-bundle ###
@@ -346,7 +346,7 @@ La structure des répertoires doit être modifiée, car nous avons besoin d'un b
 
 Par exemple, l'inscription sera utilisée seulement dans le front et nous allons plus tard créer un formulaire d'invitation pour les administrateurs qui sera utilisé seulement dans le back.
 
-Nous allons créer des sous-dossier back et front dans les dossiers templates, Controller et Form.
+Nous allons créer des sous-dossiers back et front dans les dossiers templates, Controller et Form.
 
 Controller
     -> Back
@@ -398,7 +398,7 @@ Ajouter les packages suivant :
 yarn add node-sass sass-loader bootstrap @fortawesome/fontawesome-free @fortawesome/free-brands-svg-icons jquery popper.js --dev
 ```
 
-Supprimer le fichier app.js dans le dossier assets/js/ et ajouter les deux fichiers suivant :
+Supprimer le fichier app.js dans le dossier assets/js/ et ajouter les deux fichiers suivants :
 
 ``` javascript
 // assets/js/front_app.js
@@ -801,7 +801,7 @@ Voici maintenant le base.html.twig, le front/layout.html.twig et le back/layout.
 {% endraw %} 
 {% endhighlight %}
 
-Vous pouvez pour l'instant ajouter des fichiers vide pour les includes dans les répertoires back/block & front/block...
+Vous pouvez pour l'instant, ajouter des fichiers vides pour les includes dans les répertoires back/block & front/block...
 
 ### Accueil Back et Front
 
@@ -1183,7 +1183,7 @@ php bin/console doctrine:schema:update --force
 ## Amélioration du LoginFormAuthenticator
 
 * Injection du composant de traduction afin de traduire les messages d'erreur;
-* Injection de la session pour envoyer des messages flash.
+* Injection de la session pour envoyer des messages flash;
 * Ajout d'une erreur à la connexion si l'utilisateur n'est pas activé;
 * Lors de la connexion redirection dans le back si l'utilisateur a le rôle admin;
 * Mise à jour de la date de connexion de l'utilisateur;
@@ -1318,7 +1318,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
 ### Ajout de paramètres
 
-Pour définir les informations du site web nous allons ajouter des paramètres dans le fichier services.yaml:
+Pour définir les informations du site web, nous allons ajouter des paramètres dans le fichier services.yaml:
 
 ``` yaml
 parameters:
@@ -1521,7 +1521,7 @@ class RegistrationController extends AbstractController
 
 ```
 
-### Le formulaire de l'inscription
+### Le formulaire d'inscription
 
 ``` php
 <?php
@@ -1600,7 +1600,7 @@ class RegistrationFormType extends AbstractType
 
 ```
 
-### La vue de l'inscription
+### La vue d'inscription
 
 {% highlight twig %}
 {% raw %}
@@ -1655,7 +1655,7 @@ Nous allons donc ajouter une méthode registrationConfirm dans le contrôleur Se
 
 * Récupérer le token de la requête;
 * Rechercher l'utilisateur à partir du token;
-* Si l'utilisateur n'existe pas on retourne un statut 404;
+* Si l'utilisateur n'existe pas, on retourne un statut 404;
 * On set le token de l'utilisateur à null pour qu'il ne soit pas réutilisé, on active l'utilisateur et on le flush avec Doctrine;
 * On envoie un message flash pour indiquer que le compte a bien été activé.
 * Et finalement, on connecte l'utilisateur et on le redirige en déclenchant l'événement authenticateUserAndHandleSuccess;
@@ -1752,13 +1752,13 @@ class SecurityController extends AbstractController
 
 ```
 
-Et voilà, tout est réglé concernant l'a vérification de l'email.
+Et voilà, tout est réglé concernant la vérification de l'adresse email.
 
 ## J'ai oublié mon mot de passe
 
-Au nombre de mot de passe qu'on doit se souvenir pour chacun des services qu'on utilise au quotidien, il est normal d'en oublier un une fois de temps en temps. C'est donc une fonctionnalité indispensable.
+Au nombre de mot de passe dont on doit se souvenir pour chacun des services qu'on utilise au quotidien, il est normal d'en oublier un une fois de temps en temps. C'est donc une fonctionnalité indispensable.
 
-Nous allons créer une page dans laquelle l'utilisateur pourra entrer son email. À la soumission de ce formulaire un mail lui sera envoyé dans lequel il y aura un lien avec un token pour qui puisse réinitialiser son mot de passe.
+Nous allons créer une page dans laquelle l'utilisateur pourra entrer son email. À la soumission de ce formulaire, un mail lui sera envoyé dans lequel il y aura un lien avec un token pour qu'il puisse réinitialiser son mot de passe.
 
 La page de réinitialisation aura un double usage:
 
@@ -1851,11 +1851,11 @@ Cette action est un peu longue. Il faut dire qu'elle a deux rôles. Redéfinir l
 
 Tout d'abord l'id dans la route est facultatif, car l'utilisateur peut également être récupéré avec un token dans le cas d'un oubli de mot de passe.
 
-S'il y a un token, on essaie de récupérer l'utilisateur à partir de celui-ci, mais s'iln'y a aucune correspondance, on n'oublie pas de déclencher une erreur 404. 
+S'il y a un token, on essaie de récupérer l'utilisateur à partir de celui-ci, mais s'il n'y a aucune correspondance, on n'oublie pas de déclencher une erreur 404. 
 
-S'il n'y a pas de token et que la variable $user est nulle on déclenche une LogicException.
+S'il n'y a pas de token et que la variable $user est nulle, on déclenche une LogicException.
 
-De cette manière, on s'assure que pour la suite la variable $user est initialisé soit par le ParamConverter ou par la méthode magique findOneByConfirmationToken du repository.
+De cette manière, on s'assure que pour la suite la variable $user est initialisée soit par le ParamConverter ou par la méthode magique findOneByConfirmationToken du repository.
 
 Ensuite, on crée un formulaire en spécifiant l'option with_token pour préciser s'il faut demander l'ancien mot de passe ou pas.
 
@@ -2159,7 +2159,7 @@ Maintenant que nous avons implémenté toutes les fonctionnalités, nous pouvons
 
 Nous avons finalement un espace utilisateur complet et fonctionnel. Grâce au symfony/maker-bundle, nous avons généré une bonne partie de l'application ce qui nous a grandement facilité la vie.
 
-Vous pouvez retrouver les fichiers de traductions et tous les fichiers que je vous ai présenté dans [le repository Github du projet].
+Vous pouvez retrouver les fichiers de traduction et tous les fichiers que je vous ai présentés dans [le repository Github du projet].
 
 Il manque seulement la gestion des utilisateurs du côté back-office. Nous allons voir cela dans un prochain tutoriel qui devrait venir rapidement. Ça ne devrait pas être très compliqué, car nous allons utiliser le devfusion/maker-bundle pour générer 90 % du code.
 

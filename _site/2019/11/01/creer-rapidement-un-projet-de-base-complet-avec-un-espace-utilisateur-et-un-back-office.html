@@ -58,7 +58,7 @@
         
         
         <li class="nav-item">
-            <a class="nav-link" href="/blogue">Blogue</a>
+            <a class="nav-link" href="/blog">Blogue</a>
         </li>
         
         
@@ -95,7 +95,7 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>Depuis Symfony 4.0, il n’est plus nécessaire d’installer un bundle externe comme friendsofsymfony/user-bundle pour créer un espace utilisateur. En effet, le composant Security de Symfony est de plus en plus flexible, mais également plus simple. Pour exploiter toute sa puissance on peut créer des Guard authenticators et des Voters pour faire des règles complexes d’autorisations. Malgré cela, il peut parfois être déroutant de créer rapidement un espace utilisateur grâce au composant Security vu toutes les possibilités qu’il nous offre.</p>
+    <p>Depuis Symfony 4.0, il n’est plus nécessaire d’installer un bundle externe comme friendsofsymfony/user-bundle pour créer un espace utilisateur. En effet, le composant Security de Symfony est de plus en plus flexible, mais également plus simple. Pour exploiter toute sa puissance, on peut créer des Guard authenticators et des Voters pour faire des règles complexes d’autorisations. Malgré cela, il peut parfois être déroutant de créer rapidement un espace utilisateur grâce au composant Security vu toutes les possibilités qu’il nous offre.</p>
 
 <p>L’équipe de Symfony a pensé à nous en ajoutant des commandes dans le maker-bundle, à partir de la version 1.8, afin de nous faciliter la tâche.</p>
 
@@ -113,7 +113,7 @@ Created project in dev_fusion_skeleton_user
 </code></pre></div></div>
 <hr />
 
-<h3 id="modifions-le-fichier-env-pour-configurer-la-base-de-données-et-créons-là">Modifions le fichier .env pour configurer la base de données et créons là</h3>
+<h3 id="modifions-le-fichier-env-pour-configurer-la-base-de-données-et-créons-la">Modifions le fichier .env pour configurer la base de données et créons-la</h3>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>###&gt; doctrine/doctrine-bundle ###
 DATABASE_URL=mysql://root:@127.0.0.1:3306/dev_fusion_skeleton_user
@@ -426,7 +426,7 @@ le login de connexion, inclut la protection CSRF et redirige intelligemment en c
 
 <p>Par exemple, l’inscription sera utilisée seulement dans le front et nous allons plus tard créer un formulaire d’invitation pour les administrateurs qui sera utilisé seulement dans le back.</p>
 
-<p>Nous allons créer des sous-dossier back et front dans les dossiers templates, Controller et Form.</p>
+<p>Nous allons créer des sous-dossiers back et front dans les dossiers templates, Controller et Form.</p>
 
 <p>Controller
     -&gt; Back
@@ -478,7 +478,7 @@ compiler et minifier les assets.</p>
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">yarn add node-sass sass-loader bootstrap @fortawesome/fontawesome-free @fortawesome/free-brands-svg-icons jquery popper.js --dev
 </span></code></pre></div></div>
 
-<p>Supprimer le fichier app.js dans le dossier assets/js/ et ajouter les deux fichiers suivant :</p>
+<p>Supprimer le fichier app.js dans le dossier assets/js/ et ajouter les deux fichiers suivants :</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// assets/js/front_app.js</span>
 
@@ -867,7 +867,7 @@ compiler et minifier les assets.</p>
 <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
  </code></pre></figure>
 
-<p>Vous pouvez pour l’instant ajouter des fichiers vide pour les includes dans les répertoires back/block &amp; front/block…</p>
+<p>Vous pouvez pour l’instant, ajouter des fichiers vides pour les includes dans les répertoires back/block &amp; front/block…</p>
 
 <h3 id="accueil-back-et-front">Accueil Back et Front</h3>
 
@@ -1239,7 +1239,7 @@ compiler et minifier les assets.</p>
 
 <ul>
   <li>Injection du composant de traduction afin de traduire les messages d’erreur;</li>
-  <li>Injection de la session pour envoyer des messages flash.</li>
+  <li>Injection de la session pour envoyer des messages flash;</li>
   <li>Ajout d’une erreur à la connexion si l’utilisateur n’est pas activé;</li>
   <li>Lors de la connexion redirection dans le back si l’utilisateur a le rôle admin;</li>
   <li>Mise à jour de la date de connexion de l’utilisateur;</li>
@@ -1376,7 +1376,7 @@ compiler et minifier les assets.</p>
 
 <h3 id="ajout-de-paramètres">Ajout de paramètres</h3>
 
-<p>Pour définir les informations du site web nous allons ajouter des paramètres dans le fichier services.yaml:</p>
+<p>Pour définir les informations du site web, nous allons ajouter des paramètres dans le fichier services.yaml:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">parameters</span><span class="pi">:</span>
     <span class="na">configuration</span><span class="pi">:</span>
@@ -1569,7 +1569,7 @@ compiler et minifier les assets.</p>
 
 </code></pre></div></div>
 
-<h3 id="le-formulaire-de-linscription">Le formulaire de l’inscription</h3>
+<h3 id="le-formulaire-dinscription">Le formulaire d’inscription</h3>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 
@@ -1647,7 +1647,7 @@ compiler et minifier les assets.</p>
 
 </code></pre></div></div>
 
-<h3 id="la-vue-de-linscription">La vue de l’inscription</h3>
+<h3 id="la-vue-dinscription">La vue d’inscription</h3>
 
 <figure class="highlight"><pre><code class="language-twig" data-lang="twig"><span class="c">{# templates/front/registration/register.html.twig #}</span>
 <span class="cp">{%</span> <span class="nv">trans_default_domain</span> <span class="s1">'security'</span> <span class="cp">%}</span>
@@ -1698,7 +1698,7 @@ compiler et minifier les assets.</p>
 <ul>
   <li>Récupérer le token de la requête;</li>
   <li>Rechercher l’utilisateur à partir du token;</li>
-  <li>Si l’utilisateur n’existe pas on retourne un statut 404;</li>
+  <li>Si l’utilisateur n’existe pas, on retourne un statut 404;</li>
   <li>On set le token de l’utilisateur à null pour qu’il ne soit pas réutilisé, on active l’utilisateur et on le flush avec Doctrine;</li>
   <li>On envoie un message flash pour indiquer que le compte a bien été activé.</li>
   <li>Et finalement, on connecte l’utilisateur et on le redirige en déclenchant l’événement authenticateUserAndHandleSuccess;</li>
@@ -1795,13 +1795,13 @@ compiler et minifier les assets.</p>
 
 </code></pre></div></div>
 
-<p>Et voilà, tout est réglé concernant l’a vérification de l’email.</p>
+<p>Et voilà, tout est réglé concernant la vérification de l’adresse email.</p>
 
 <h2 id="jai-oublié-mon-mot-de-passe">J’ai oublié mon mot de passe</h2>
 
-<p>Au nombre de mot de passe qu’on doit se souvenir pour chacun des services qu’on utilise au quotidien, il est normal d’en oublier un une fois de temps en temps. C’est donc une fonctionnalité indispensable.</p>
+<p>Au nombre de mot de passe dont on doit se souvenir pour chacun des services qu’on utilise au quotidien, il est normal d’en oublier un une fois de temps en temps. C’est donc une fonctionnalité indispensable.</p>
 
-<p>Nous allons créer une page dans laquelle l’utilisateur pourra entrer son email. À la soumission de ce formulaire un mail lui sera envoyé dans lequel il y aura un lien avec un token pour qui puisse réinitialiser son mot de passe.</p>
+<p>Nous allons créer une page dans laquelle l’utilisateur pourra entrer son email. À la soumission de ce formulaire, un mail lui sera envoyé dans lequel il y aura un lien avec un token pour qu’il puisse réinitialiser son mot de passe.</p>
 
 <p>La page de réinitialisation aura un double usage:</p>
 
@@ -1896,11 +1896,11 @@ compiler et minifier les assets.</p>
 
 <p>Tout d’abord l’id dans la route est facultatif, car l’utilisateur peut également être récupéré avec un token dans le cas d’un oubli de mot de passe.</p>
 
-<p>S’il y a un token, on essaie de récupérer l’utilisateur à partir de celui-ci, mais s’iln’y a aucune correspondance, on n’oublie pas de déclencher une erreur 404.</p>
+<p>S’il y a un token, on essaie de récupérer l’utilisateur à partir de celui-ci, mais s’il n’y a aucune correspondance, on n’oublie pas de déclencher une erreur 404.</p>
 
-<p>S’il n’y a pas de token et que la variable $user est nulle on déclenche une LogicException.</p>
+<p>S’il n’y a pas de token et que la variable $user est nulle, on déclenche une LogicException.</p>
 
-<p>De cette manière, on s’assure que pour la suite la variable $user est initialisé soit par le ParamConverter ou par la méthode magique findOneByConfirmationToken du repository.</p>
+<p>De cette manière, on s’assure que pour la suite la variable $user est initialisée soit par le ParamConverter ou par la méthode magique findOneByConfirmationToken du repository.</p>
 
 <p>Ensuite, on crée un formulaire en spécifiant l’option with_token pour préciser s’il faut demander l’ancien mot de passe ou pas.</p>
 
@@ -2192,7 +2192,7 @@ compiler et minifier les assets.</p>
 
 <p>Nous avons finalement un espace utilisateur complet et fonctionnel. Grâce au symfony/maker-bundle, nous avons généré une bonne partie de l’application ce qui nous a grandement facilité la vie.</p>
 
-<p>Vous pouvez retrouver les fichiers de traductions et tous les fichiers que je vous ai présenté dans <a href="https://github.com/official-dev-fusion/dev-fusion-skeleton-user">le repository Github du projet</a>.</p>
+<p>Vous pouvez retrouver les fichiers de traduction et tous les fichiers que je vous ai présentés dans <a href="https://github.com/official-dev-fusion/dev-fusion-skeleton-user">le repository Github du projet</a>.</p>
 
 <p>Il manque seulement la gestion des utilisateurs du côté back-office. Nous allons voir cela dans un prochain tutoriel qui devrait venir rapidement. Ça ne devrait pas être très compliqué, car nous allons utiliser le devfusion/maker-bundle pour générer 90 % du code.</p>
 

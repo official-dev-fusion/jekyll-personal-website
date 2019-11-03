@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: Blogue
-permalink: /blogue
+permalink: /blog
 ---
 
 Bienvenue sur mon blogue.
