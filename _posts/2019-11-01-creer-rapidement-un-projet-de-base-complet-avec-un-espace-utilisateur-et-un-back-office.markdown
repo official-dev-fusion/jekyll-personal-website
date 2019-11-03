@@ -1900,7 +1900,7 @@ class ResetPasswordFormType extends AbstractType
                         ]),
                         new Length([
                             'min' => 6,
-                            'minMessage' => 'registration.message.length_min',
+                            'minMessage' => 'registration.message.password_length_min',
                             // max length allowed by Symfony for security reasons
                             'max' => 4096,
                         ]),
@@ -2159,10 +2159,12 @@ Maintenant que nous avons implémenté toutes les fonctionnalités, nous pouvons
 
 Nous avons finalement un espace utilisateur complet et fonctionnel. Grâce au symfony/maker-bundle, nous avons généré une bonne partie de l'application ce qui nous a grandement facilité la vie.
 
-Vous pouvez retrouver les fichiers de traductions et tous les fichiers que je vous ai présenté dans le repository Github du projet.
+Vous pouvez retrouver les fichiers de traductions et tous les fichiers que je vous ai présenté dans [le repository Github du projet].
 
 Il manque seulement la gestion des utilisateurs du côté back-office. Nous allons voir cela dans un prochain tutoriel qui devrait venir rapidement. Ça ne devrait pas être très compliqué, car nous allons utiliser le devfusion/maker-bundle pour générer 90 % du code.
 
 En espérant que tout cela vous sera utile.
 
 Si vous rencontrer des bogues, des erreurs ou si vous avez des commentaires, vous pouvez m'en faire part à l'adresse martin.gilbert@dev-fusion.com.
+
+[le repository Github du projet]: https://github.com/official-dev-fusion/dev-fusion-skeleton-user
