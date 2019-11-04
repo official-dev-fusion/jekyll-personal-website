@@ -1,7 +1,7 @@
 ---
 layout: cv
 title: Curriculum Vitae - Martin GILBERT
-permalink: /cv
+permalink: /cv/
 ---
 <main role="main">
     <article class="resume-wrapper text-center position-relative">
