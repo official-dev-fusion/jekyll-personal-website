@@ -2,22 +2,41 @@
 layout: default
 ---
 <main role="main">
-<div class="container">
-  <h1 class="page-heading">{{ page.title | escape }}</h1>
-  
-  {{ content }}
+<div class="banner pages">
+    <div class="container">
+      <div class="bg-black"></div>
+        <div class="middle">
+           <h1 class="text-white">{{ page.title | escape }}</h1>
+            <div class="shape white center"></div>
+        </div>
+    </div>
+  </div>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        
-        <span class="post-meta">{{ post.date | date: "%d/%m/%Y"  }}</span>
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-  <p class="rss-subscribe">Souscrire <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-</div>
+<section class="section-padding">
+    <div class="container">
+      <h2>Bienvenue sur mon blogue.</h2>
+      <div class="shape left"></div>
+      
+      <div class="row align-items-stretch ">
+          {% for post in site.posts %}
+            <div class="col-lg-4 col-md-6 mb-lg-0">
+              <div class="card mb-4">
+                  <div class="card-body">
+                      <h3 class="h5">{{ post.title | truncatewords: 20 }}</h3>
+                      <hr>
+                      <span class="post-meta"><i class="far fa-calendar-minus"></i> {{ post.date | date: "%d/%m/%Y"  }}</span>
+                      <hr>
+                      <p class="text-justify">{{ post.content | strip_html | truncatewords: 50 }}</p>
+                      <a href="{{ post.url }}" class="btn btn-default btn-block" role="button">Lire la suite</a>
+                  </div>
+              </div>
+            </div>
+          {% endfor %}
+      </div>
+      <hr>
+      <div class="text-right">
+         <p class="rss-subscribe">Souscrire <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+      </div>
+    </div>
+</section>
 </main>

@@ -2,23 +2,49 @@
 layout: default
 ---
 <main role="main">
-  <div class="container">
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {% assign date_format = site.minima.date_format | default: "%d/%m/%Y" %}
-        {{ page.date | date: date_format }}
-      </time>
-      {% if page.author %}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-      {% endif %}</p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
+  <div class="banner pages">
+    <div class="container">
+      <div class="bg-black"></div>
+        <div class="middle">
+           <h1 class="text-white h4">{{ page.title | escape }}</h1>
+            <div class="shape white center"></div>
+        </div>
+    </div>
   </div>
-</article>
-</div>
+  <section class="section-padding">
+    <div class="container">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <div class="col-lg-10 mx-auto">
+              <div class="card">
+                <div class="card-body">
+                    <p class="post-meta">
+                      <hr>
+                        <div class="row">
+                          <div class="col-md-6 mr-auto">
+                              <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                                {% assign date_format = site.minima.date_format | default: "%d/%m/%Y" %}
+                                <i class="far fa-calendar-minus"></i> {{ page.date | date: date_format }}
+                              </time>
+                          </div>
+                          <div class="col-md-6 ml-auto">
+                               {% if page.author %}
+                                  <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    <span itemprop="name">
+                                      <i class="fas fa-user-edit"></i> {{ page.author }}
+                                    </span>
+                                  </span>
+                                {% endif %}
+                          </div>
+                        </div>
+                      <hr>
+                    </p>
+                    <div class="text-justify">
+                        {{ content }}
+                    </div>
+                </div>
+              </div>
+          </div>
+        </article>
+    </div>
+  </section>
 </main>

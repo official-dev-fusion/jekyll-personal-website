@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 ## À propos de DevFusion
-
+<div class="shape left"></div>
 Le site DevFusion a été créé en 2019 afin de partager mes réflexions, mes découvertes, mes développements personnels et des petits tutoriels pour contribuer à la communauté.
 
 Professionnellement, je suis développeur Symfony depuis 2017. J’ai côtoyé de nombreux langage de programmation : C++, Java, C#, Python Javascript et PHP. J’aime bien dire à l’exagération : Je déteste PHP, mais je vénère Symfony ! J'éprouve particulièrement de l'intérêt pour les bases de données, les applications web et l'accessibilité des nouvelles technologies. 

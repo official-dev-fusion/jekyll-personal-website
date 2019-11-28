@@ -8538,6 +8538,7 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
   background: #434E5E;
   color: rgba(255, 255, 255, 0.9);
   height: 220px;
+  overflow: hidden;
 }
 
 .resume-header .picture {
@@ -8574,6 +8575,11 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
   border-radius: 0.125rem;
   background: white;
   color: #434E5E;
+}
+
+.resume-section{
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .resume-section-title {
